@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme("colors.bg");
+  color: theme("colors.fg");
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * Warm paper backdrop: soft navy + red color blooms up top and a faint dotted
+ * grid. Fixed, so it never contributes to layout or shifts.
+ */
+.backdrop-grid {
+  background-color: theme("colors.bg");
+  background-image:
+    radial-gradient(38rem 26rem at 8% -6%, rgba(23, 50, 92, 0.1), transparent 60%),
+    radial-gradient(34rem 24rem at 96% 2%, rgba(209, 64, 47, 0.09), transparent 60%),
+    radial-gradient(rgba(23, 50, 92, 0.07) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 1.5rem 1.5rem;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+/* Washi-tape strip used to pin cards/stickers, scrapbook style */
+.tape {
+  position: absolute;
+  height: 1.5rem;
+  width: 4rem;
+  background: rgba(209, 64, 47, 0.16);
+  border-left: 1px dashed rgba(209, 64, 47, 0.3);
+  border-right: 1px dashed rgba(209, 64, 47, 0.3);
+  backdrop-filter: blur(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::selection {
+  background: rgba(209, 64, 47, 0.22);
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.navy.DEFAULT");
+  outline-offset: 3px;
+  border-radius: 4px;
+}
