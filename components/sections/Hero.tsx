@@ -29,7 +29,9 @@ export function Hero() {
             {...rise(0)}
             className="text-4xl font-semibold leading-[1.05] tracking-tight text-navy sm:text-5xl md:text-5xl lg:text-6xl"
           >
-            Hi, I&apos;m Omar <span className="whitespace-nowrap">El-Banna</span>
+            Hi, I&apos;m
+            <br />
+            <span className="whitespace-nowrap">Omar El-Banna</span>
           </motion.h1>
 
           <div className="mt-7 border-l-2 border-red/30 pl-5 sm:pl-8">
